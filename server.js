@@ -60,7 +60,7 @@ app.get('/click', async (req, res) => {
     res.json({ count: newCount });
 
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'db error' });
+    console.error("🔥 FULL DB ERROR:", err);
+    res.status(500).json({ error: err.message, detail: err });
   }
 });
