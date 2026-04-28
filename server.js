@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 
 app.get('/count', async (req, res) => {
   const result = await pool.query(
-    'SELECT SUM(count) as total FROM clicks'
+    'SELECT count as total FROM clicks'
   );
 
   res.json({ count: result.rows[0].total || 0 });
